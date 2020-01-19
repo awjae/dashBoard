@@ -5,9 +5,7 @@ var apiCall = require('./API_Call');
 
 //기본 메인 페이지
 server.get('/', function(req, res) {
-    console.log('/index.do 요청됨.');
-    console.log('PARAMS')
-    console.log(req.query);
+    console.log('/ 요청됨.');
     
     req.app.render('index', '', function(err, html) {
         if (err) {
