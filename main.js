@@ -45,6 +45,7 @@ server.get('/list.do', function(req, res) {
     
 });
 
+//기본 post 요청
 server.post('/postList.do', function (req, res) {
     console.log('/postList.do 요청됨');
     console.log('PARAMS');
@@ -74,6 +75,7 @@ server.post('/postList.do', function (req, res) {
 
 });
 
+//작업중
 server.get('/dnfServerList.do', function (req, res) {
     console.log('/dnfServerList.do 요청됨');
 
