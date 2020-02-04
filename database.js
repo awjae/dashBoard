@@ -13,6 +13,16 @@ var pool = mysql.createPool({
     debug: false
 });
 
+//pg
+// const pg = new Client({
+//     user : 'postgres',
+//     host : '121.160.17.75',
+//     database : 'navi',
+//     password : 'postgres',
+//     port : 5432,
+// });
+// pg.connect();
+
 database.query = function(res, sql, dbParams, callback) {
     pool.getConnection(function (err, conn) {
         if (err) {
@@ -47,6 +57,22 @@ database.query = function(res, sql, dbParams, callback) {
     
 };
 
+//pg
+// database.PgQuery = function(res, sql, dbParams, callback) {
+
+//     pg.query(sql, dbParams, (err, res) => {
+//         if (err) {
+//             console.log(err.stack)
+//             console.log('pgQuery 에러')
+//             return;
+//         } else {
+//             //console.log(res.rows[0]);
+//         }
+//         if (callback) {
+//             callback(null, res.rows);  
+//         }    
+//     });
+// }
 
 
 module.exports = database;

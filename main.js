@@ -110,4 +110,21 @@ server.get('/ChitTimeLine.do', function (req, res) {
     });
 });
 
+server.get('/postgresReqExample.do', function(req, res) {
+    var data = req.query;
+
+    var sql = `SELECT * FROM test1 WHERE id = $1 AND password = $2`
+    var dbParams = [data.lng, data.lat]
+    database.PgQuery(res, sql, dbParams, function(err, rows) {
+
+        if (rows.length > 0) {
+            util.sendResponse(res, rows);
+        } else {
+            util.sendResponse(res, []);
+        } 
+       
+    });
+});
+
+
 server.start();
