@@ -92,23 +92,6 @@ server.get('/dnfServerList.do', function (req, res) {
         }
     });
 });
-//작업중
-server.get('/ChitTimeLine.do', function (req, res) {
-    console.log('/ChitTimeLine.do 요청됨');
-
-    var data = req.query;
-    console.log(req.query.characterName)
-    console.log(req.query.jobId)
-
-    var apiData = apiCall.API_Call('get', 'ChitTimeLine');
-    apiData.send([], function (err, result) {
-        if (!err) {
-            res.send(result);
-        } else {
-            res.send(err);
-        }
-    });
-});
 
 server.get('/postgresReqExample.do', function(req, res) {
     var data = req.query;
