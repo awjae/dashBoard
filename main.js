@@ -75,7 +75,7 @@ server.post('/postList.do', function (req, res) {
 
 });
 
-//작업중
+//API 요청 예시
 server.get('/dnfServerList.do', function (req, res) {
     console.log('/dnfServerList.do 요청됨');
 
