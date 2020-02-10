@@ -5,9 +5,7 @@ var apiCall = require('./API_Call');
 
 //기본 메인 페이지
 server.get('/', function(req, res) {
-    console.log('/index.do 요청됨.');
-    console.log('PARAMS')
-    console.log(req.query);
+    console.log('/ 요청됨.');
     
     req.app.render('index', '', function(err, html) {
         if (err) {
@@ -47,6 +45,7 @@ server.get('/list.do', function(req, res) {
     
 });
 
+//기본 post 요청
 server.post('/postList.do', function (req, res) {
     console.log('/postList.do 요청됨');
     console.log('PARAMS');
@@ -76,6 +75,7 @@ server.post('/postList.do', function (req, res) {
 
 });
 
+//API 요청 예시
 server.get('/dnfServerList.do', function (req, res) {
     console.log('/dnfServerList.do 요청됨');
 
@@ -93,22 +93,21 @@ server.get('/dnfServerList.do', function (req, res) {
     });
 });
 
-//작업중
-server.get('/ChitTimeLine.do', function (req, res) {
-    console.log('/ChitTimeLine.do 요청됨');
-
+server.get('/postgresReqExample.do', function(req, res) {
     var data = req.query;
-    console.log(req.query.characterName)
-    console.log(req.query.jobId)
 
-    var apiData = apiCall.API_Call('get', 'ChitTimeLine');
-    apiData.send([], function (err, result) {
-        if (!err) {
-            res.send(result);
+    var sql = `SELECT * FROM test1 WHERE id = $1 AND password = $2`
+    var dbParams = [data.lng, data.lat]
+    database.PgQuery(res, sql, dbParams, function(err, rows) {
+
+        if (rows.length > 0) {
+            util.sendResponse(res, rows);
         } else {
-            res.send(err);
-        }
+            util.sendResponse(res, []);
+        } 
+       
     });
 });
+
 
 server.start();
