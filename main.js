@@ -1,5 +1,5 @@
 var server = require('./server');
-var database = require('./database');
+//var database = require('./database');
 var util = require('./util');
 var apiCall = require('./API_Call');
 

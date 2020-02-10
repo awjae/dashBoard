@@ -32,7 +32,8 @@ app.use(cors());
 var router = express.Router();
 app.use('/', router);
 
-var port = 3002;
+//var port = 3002;
+var port = process.env.PORT || 8080;
 
 server.start = function() {
     http.createServer(app).listen(port, function() {
