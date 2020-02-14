@@ -17,7 +17,7 @@ server.get('/', function(req, res) {
     });
 });
 
-
+//MySQL 요청 예시
 server.get('/list.do', function(req, res) {
     console.log('/cunstomer list 요청됨.');
     console.log('PARAMS')
@@ -93,6 +93,7 @@ server.get('/dnfServerList.do', function (req, res) {
     });
 });
 
+//postgres 요청 예시
 server.get('/postgresReqExample.do', function(req, res) {
     var data = req.query;
 
@@ -109,5 +110,21 @@ server.get('/postgresReqExample.do', function(req, res) {
     });
 });
 
+
+//대시보드
+server.get('/dashBoard.do', function(req, res) {
+    console.log('/dashBoard 요청됨.');
+    
+    var dashBoardData = {};
+
+    req.app.render('dashBoard', dashBoardData, function(err, html) {
+        if (err) {
+            console.log('view 처리 시 에러 발생 ->' + err);
+            return;
+        }
+        
+        res.end(html);
+    });
+});
 
 server.start();

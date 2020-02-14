@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/awjae/customNodeJS.git"
+    "url": "git+https://github.com/awjae/*.git"
   },
   "keywords": [
     "NodeJS"
@@ -17,9 +17,9 @@
   "author": "AW",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/awjae/customNodeJS/issues"
+    "url": "https://github.com/awjae/*/issues"
   },
-  "homepage": "https://github.com/awjae/customNodeJS#readme",
+  "homepage": "https://github.com/awjae/*#readme",
   "dependencies": {
     "cors": "2.8.5",
     "ejs": "3.0.1",
