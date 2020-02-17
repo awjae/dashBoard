@@ -8,7 +8,7 @@
     overflow: hidden;
     background: rgba(0, 0, 0, 0.5);
 }
-.real-menu {
+.side-menu {
     position: fixed;
     top: 0;
     left: -300px;
@@ -26,6 +26,6 @@
 body.menu-open #body-shade {
     display: block;
 }
-body.menu-open .real-menu {
+body.menu-open .side-menu {
     left: 0;
 }
