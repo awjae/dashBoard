@@ -82,53 +82,10 @@
             padding-right: 15px;
         }
 
-        .dashboard-sidebar {
-            width: 93px;
-            position: absolute;
-            height: 100%;
-            clear: both;
-            top: -1px;
-            display: flex;
-            justify-content: center;
-            flex-direction: column
-        }
-        .dashboard-sidebar i{
-            color: #a6a6b5;
-            font-size: 3em;
-            cursor: pointer;
-        }
-        .dashboard-sidebar-logo {
-            height: 50px;
-            margin: 15px 15px 6px 15px;
-            text-align: center;
-        }
-        .dashboard-sidebar-logo ::hover{
-
-        }
-        .dashboard-sidebar-header {
-            margin-left:1px;
-            top:-15px;
-            margin-bottom:27px;
-            height: 100%;
-            width: 100%;
-            justify-content: center;
-            color : #a6a6b5;
-            border-radius : 15px;
-            background: linear-gradient(to bottom, #f3f3f3, #ffffff, #c9a0ff);
-        }
-        
     </style>
 </head>
 <body>
-    <div class="dashboard-sidebar">
-        <div class="dashboard-sidebar-logo">
-            <span ><a class="" id="open-menu"><i class="material-icons">dashboard</i></a></span>
-        </div>
-        <div  class="dashboard-sidebar-header">
-
-        </div>
-    </div> 
-    <div id="body-shade">asd</div>
+     <div id="body-shade">asd</div>
     <nav class="side-menu" role="navigation">            
         <ul>
             <li><a href="#">Item 1</a></li>
@@ -136,27 +93,27 @@
             <li><a href="#">Item 3</a></li>
         </ul>
     </nav>
-    <div style="margin-left:100px;">
-        <div class="dashboard-header">
-            <span style="color: #a6a6b5; width:200px; text-align: center; font-size: 1.8em;">Dashboard</span>
 
-            <ul id="widget-dropdown" class="dropdown-content">
-                <li><a href="#!">one<span class="badge">1</span></a></li>
-                <li><a href="#!">two<span class="new badge">1</span></a></li>
-                <li><a href="#!">three</a></li>
-            </ul>
-            <a class="widget-dropdown-btn dropdown-trigger" href="#!" data-target="widget-dropdown"><span style="vertical-align: middle">위젯</span><i class="material-icons right">arrow_drop_down</i></a>
-            <a class="header-btn compact-trigger" href="#!"><span>정렬</span><i class="material-icons right">clear_all</i></a>
-            <a class="header-btn save-trigger" href="#!"><span>저장</span><i class="material-icons right">save</i></a>
+    <div class="dashboard-header">
+        <span style="padding-top: 3px;"><a class="" id="open-menu"><i class="material-icons">dashboard</i></a></span>
+        <span style="color: #a6a6b5; width:200px; text-align: center; font-size: 1.8em;">Dashboard</span>
+
+        <ul id="widget-dropdown" class="dropdown-content">
+            <li><a href="#!">one<span class="badge">1</span></a></li>
+            <li><a href="#!">two<span class="new badge">1</span></a></li>
+            <li><a href="#!">three</a></li>
+        </ul>
+        <a class="widget-dropdown-btn dropdown-trigger" href="#!" data-target="widget-dropdown"><span style="vertical-align: middle">위젯</span><i class="material-icons right">arrow_drop_down</i></a>
+        <a class="header-btn compact-trigger" href="#!"><span>정렬</span><i class="material-icons right">clear_all</i></a>
+        <a class="header-btn save-trigger" href="#!"><span>저장</span><i class="material-icons right">save</i></a>
+    </div>
+
+    <div class="dashboard-body">
+
+        <div class="grid-stack">
+
         </div>
-
-        <div class="dashboard-body">
-
-            <div class="grid-stack">
-
-            </div>
-            
-        </div>
+        
     </div>
     <script>
         var grid;
