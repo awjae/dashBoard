@@ -28,10 +28,10 @@ function toggleMenu() {
         removeClass(ele, "menu-open");
     }
 }
-
+//사이드바 제거
 //Prevent the function to run before the document is loaded
-document.addEventListener('readystatechange', function() {
-    if (document.readyState === "complete") {
-        init();
-    }
-});
+// document.addEventListener('readystatechange', function() {
+//     if (document.readyState === "complete") {
+//         init();
+//     }
+// });

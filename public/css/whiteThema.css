@@ -1,0 +1,140 @@
+html[thema='white'] {
+    background-color: #CED0D3; /* Switch */
+}
+
+.dashboard-header[thema='white'] {
+    width : 100%;
+    height : 50px;
+    border-radius : 15px;
+    background-color: #FFFFFF;
+    
+}
+.dashboard-header[thema='white'] i {
+    margin-left : 15px;
+    font-size : 2.2em;
+    color : #313A46; /* Switch */
+    cursor : pointer;
+}
+.dashboard-header[thema='white']>a i {
+    font-size : 1.5em;
+}
+.dashboard-body[thema='white'] {
+    /*width : 100%;*/
+    min-height: 980px;
+    border-radius : 15px;
+    margin-top: 10px;
+    background-color: #F4F6F9; /* Switch */
+    padding: 15px;
+    /*background: radial-gradient( at 60% 15%,#1E3A79,#142440,#142440);*/
+}
+.side-menu[thema='white'] {
+    background: linear-gradient(to bottom, #313A46, #313A46, rgb(64, 74, 185));
+}
+
+.item-content[thema='white'] {
+    background-color: #FFFFFF;
+    margin: 5px;
+    border-radius: 3%;
+    height: 100%;
+}
+.item-contents-header[thema='white'] {
+    background-color: #DCDEFC;
+    height: 33px;
+    justify-content: space-between;
+    align-items: center;
+    color : #313A46;
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+.item-contents-edit[thema='white'] {
+    display: flex;
+    align-items: center;
+}
+.item-contents-edit[thema='white'] i{
+    color: #313A46;
+    cursor: pointer;
+}
+.widget-dropdown-btn[thema='white'], .header-btn[thema='white'] {
+    color: #313A46;
+    border-left : 1px solid #5f5573;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.dashboard-sidebar[thema='white'] {
+    width: 93px;
+    position: absolute;
+    height: 100%;
+    clear: both;
+    top: -1px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column
+}
+.dashboard-sidebar-logo[thema='white'] i{
+    color: #a6a6b5;
+    font-size: 3em;
+    /*cursor: pointer;*/
+}
+.dashboard-sidebar-logo[thema='white'] {
+    height: 50px;
+    margin: 15px 15px 6px 15px;
+    text-align: center;
+}
+.dashboard-sidebar-header[thema='white'] {
+    margin-left:1px;
+    top:-15px;
+    margin-bottom:27px;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    color : #a6a6b5;
+    border-radius : 15px;
+    background: linear-gradient(to bottom, #313A46, #313A46, rgb(64, 74, 185));
+    z-index: 999;
+    padding-left: 23px;
+    transition: ease 0.2s all;
+    overflow: hidden;
+}
+.dashboard-sidebar-header[thema='white']:hover {
+    width: 300%;
+    transition: ease 0.2s all;
+}
+
+.dashboard-sidebar-header[thema='white'] p {
+    text-align: left;
+    cursor:pointer;
+    display: flex;
+    align-items: center;
+}
+.dashboard-sidebar-header[thema='white'] i{
+    font-size: 3em;
+}
+.dashboard-sidebar-header[thema='white'] p:hover, .dashboard-sidebar-header[thema='white'] i:hover {
+    color: #727CF5 !important;
+}
+.dashboard-sidebar-body[thema='white'] {
+    height : 90%;
+    width: 230px;
+}
+
+.dashboard-sidebar-body-content[thema='white'] {
+    margin-left: 30px;
+
+}
+.dashboard-sidebar-footer[thema='white'] i{
+    color: #4e30b0;
+}
+.dashboard-sidebar-footer[thema='white'] i:hover{
+    color: #a6a6b5 !important; 
+}
+
+
+.switch label input[type=checkbox]:checked + .lever {
+    background-color: #7171aa;
+}
+.switch label input[type=checkbox]:checked + .lever:after {
+    background-color: #4e30b0;
+}
