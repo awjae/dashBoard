@@ -4,7 +4,7 @@ var util = require('./util');
 var apiCall = require('./API_Call');
 
 //기본 메인 페이지
-server.get('/', function(req, res) {
+server.get('/default.do', function(req, res) {
     console.log('/ 요청됨.');
     
     req.app.render('index', '', function(err, html) {
@@ -112,7 +112,7 @@ server.get('/postgresReqExample.do', function(req, res) {
 
 
 //대시보드
-server.get('/dashBoard.do', function(req, res) {
+server.get('/', function(req, res) {
     console.log('/dashBoard 요청됨.');
     
     var dashBoardData = {};

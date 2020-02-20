@@ -63,13 +63,14 @@ html {
 }
 
 .dashboard-sidebar {
+    position: fixed;
+    justify-content: start;
     width: 93px;
-    position: absolute;
     height: 100%;
     clear: both;
+    z-index: 999;
     top: -1px;
     display: flex;
-    justify-content: center;
     flex-direction: column
 }
 .dashboard-sidebar-logo i{

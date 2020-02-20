@@ -33,7 +33,7 @@ var router = express.Router();
 app.use('/', router);
 
 //var port = 3002;
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 80;
 
 server.start = function() {
     http.createServer(app).listen(port, function() {

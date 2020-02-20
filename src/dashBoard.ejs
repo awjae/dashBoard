@@ -19,6 +19,7 @@
     
     <link rel="stylesheet" href="css/blackThema.css"/>
     <link rel="stylesheet" href="css/whiteThema.css"/>
+    
 </head>
 <body>
     <div class="dashboard-sidebar">
@@ -47,22 +48,24 @@
             </div>
         </div>
     </div> 
-    <div id="body-shade">asd</div>
+    <!-- <div id="body-shade">asd</div>
     <nav class="side-menu" role="navigation">            
         <ul>
             <li><a href="#">Item 1</a></li>
             <li><a href="#">Item 2</a></li>
             <li><a href="#">Item 3</a></li>
         </ul>
-    </nav>
+    </nav> -->
     <div style="margin-left:100px;">
         <div class="dashboard-header">
             <span style="color: #a6a6b5; width:200px; text-align: center; font-size: 1.8em;">Dashboard</span>
 
             <ul id="widget-dropdown" class="dropdown-content">
-                <li><a href="#!">one</a></li>
-                <li><a href="#!">two</a></li>
-                <li><a href="#!">three</a></li>
+                <li><a href="#!">지도</a></li>
+                <li><a href="#!">차트</a></li>
+                <li><a href="#!">스텟</a></li>
+                <li><a href="#!">리스트</a></li>
+                <li><a href="#!">텍스트</a></li>
             </ul>
             <a class="widget-dropdown-btn dropdown-trigger" href="#!" data-target="widget-dropdown"><span style="vertical-align: middle">위젯</span><i class="material-icons right">arrow_drop_down</i></a>
             <a class="header-btn compact-trigger" href="#!"><span>정렬</span><i class="material-icons right">clear_all</i></a>
@@ -77,79 +80,35 @@
             
         </div>
     </div>
+    <script src="js/widgetTemplete.js"></script>
+    <script src="js/testData.js"></script>
     <script>
         var grid;
         $(document).ready(function() {
+            //ready시 화면 크기를 클라이언트크기에 맞춤(dashboard-sidebar-header의 속성이 fixed라서 참고 사용)
+            $('.dashboard-body').css('minHeight', parseInt($('.dashboard-sidebar-header').css('height')))
+            
+
+
             $('.grid-stack').gridstack({
                 resizable: {
                     handles: 'se, sw'
                 },
                 float: true
             });
+            grid = $('.grid-stack').data('gridstack');
+            grid.removeAll();
 
-            var el = `<div style="overflow:hidden;" class="grid-stack-item"  data-gs-width="5" data-gs-height="5" data-gs-x="6" data-gs-y="3" data-gs-min-width="2" data-gs-min-height="3">
-                <div class="item-content grid-stack-item-content" style="overflow-y: hidden;">
-                    <header class="item-contents-header">{inputData.title}
-                        <div class="item-contents-edit">
-                            <i class="material-icons" style="font-size: 1.2em; position: relative;">build</i> 
-                            <i class="material-icons">cancel</i>
-                        </div>
-                    </header>
-                    <div id="dialog_4563" class="editDialog" style="display:none;">
-                        <div class="editDialog_detail">
-                            3456
-                            <button onclick="editContents()">적용</button>
-                        </div>
-                    </div>
-                    <div id='contents' style="height: 93%;">
-                    </div> 
-                </div>
-            </div>`
-            grid= $('.grid-stack').data('gridstack');
-            //addWidget = //(x, y, w, h, boolean, minW. maxW, minH, MaxW)
-            grid.addWidget(el, 0, 0, 1, 1, false, 2, 12, 3, 12);
-            grid.addWidget(el, 5, 5, 1, 4, false, 2, 12, 3, 12);   
-            grid.addWidget(el, 5, 1, 1, 1, false, 2, 12, 3, 12); 
+            redraw(grid);
+
+            //위젯 삭제
+            $('.widgetCancel').on('click', function (e) {
+                $(e.target).parents('.grid-stack-item')[0].remove();
+            })
         });
 
-        //드롭다운
-        $('.dropdown-trigger').dropdown();
-
-        //정렬
-        $('.compact-trigger').click(function() {
-            grid.compact();
-        });
-
-        $('#themeSwitch').change(function (e) {
-            if($(e.target).prop('checked')) {
-                //다크
-                console.log('다크')
-                $('html').attr('thema','')
-                $('.dashboard-header').attr('thema','')
-                $('.dashboard-body').attr('thema','')
-                $('.item-content').attr('thema','')
-                $('.item-contents-header').attr('thema','')
-                $('.item-contents-edit').attr('thema','')
-                $('.header-btn').attr('thema','')
-                $('.widget-dropdown-btn').attr('thema','')
-                $('.dashboard-sidebar-logo').attr('thema','')
-                $('.dashboard-sidebar-header').attr('thema','')
-
-            } else {
-                //화이트
-                console.log('화이트')
-                $('html').attr('thema','white')
-                $('.dashboard-header').attr('thema','white')
-                $('.dashboard-body').attr('thema','white')
-                $('.item-content').attr('thema','white')
-                $('.item-contents-header').attr('thema','white')
-                $('.item-contents-edit').attr('thema','white')
-                $('.header-btn').attr('thema','white')
-                $('.widget-dropdown-btn').attr('thema','white')
-                $('.dashboard-sidebar-logo').attr('thema','white')
-                $('.dashboard-sidebar-header').attr('thema','white')
-            }
-        })
+        
     </script>
+    <script src="js/dashBoard.js"></script>
 </body>
 </html>
