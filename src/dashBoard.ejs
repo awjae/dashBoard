@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="KR" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,6 +81,7 @@
     </div>
     <script src="js/widgetTemplete.js"></script>
     <script src="ol/ol.js"></script>
+    <script src="gridstack/jQuery_touch.min.js"></script>
     <script src="js/testData.js"></script>
     <script>
         var grid;
@@ -94,6 +95,7 @@
                 resizable: {
                     handles: 'se, sw'
                 },
+                alwaysShowResizeHandle: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
                 float: true
             });
             grid = $('.grid-stack').data('gridstack');

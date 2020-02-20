@@ -24,6 +24,7 @@ html {
     margin-top: 10px;
     background-color: #1F1E2E; /* Switch */
     padding: 15px;
+    color: #a6a6b5;
     /*background: radial-gradient( at 60% 15%,#1E3A79,#142440,#142440);*/
 }
 .side-menu {
@@ -138,3 +139,4 @@ html {
 .switch label input[type=checkbox]:checked + .lever:after {
     background-color: #4e30b0;
 }
+

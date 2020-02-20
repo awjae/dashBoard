@@ -93,8 +93,70 @@ var getTamplete = function (dashBoardSeq, widget) {
         case 'chart' :
             break;
         case 'stat' :
+            templete = `<div id="widget-${dashBoardSeq}_${widget.widgetSeq}" style="overflow:hidden;" class="grid-stack-item"  data-gs-width="5" data-gs-height="5" data-gs-x="6" data-gs-y="3" data-gs-min-width="3" data-gs-min-height="3">
+                            <div class="item-content grid-stack-item-content" style="overflow-y: hidden;">
+                                <header class="item-contents-header">${widget.widgetName}
+                                    <div class="item-contents-edit">
+                                        <i class="material-icons" style="font-size: 1.2em; position: relative;">build</i> 
+                                        <span class="widgetCancel"><i class="material-icons">cancel</i></span>
+                                    </div>
+                                </header>
+                                <div id="dialog_4563" class="editDialog" style="display:none;">
+                                    <div class="editDialog_detail">
+                                        <button onclick="editContents()">적용</button>
+                                    </div>
+                                </div>
+                                <div id='contents' style="height: 93%;" widget_type="${widget.type}">
+                                    
+                                </div> 
+                            </div>
+                        </div>`
             break;
         case 'list' :
+            templete = `<div id="widget-${dashBoardSeq}_${widget.widgetSeq}" style="overflow:hidden;" class="grid-stack-item"  data-gs-width="5" data-gs-height="5" data-gs-x="6" data-gs-y="3" data-gs-min-width="3" data-gs-min-height="3">
+                            <div class="item-content grid-stack-item-content" style="overflow-y: hidden;">
+                                <header class="item-contents-header">${widget.widgetName}
+                                    <div class="item-contents-edit">
+                                        <i class="material-icons" style="font-size: 1.2em; position: relative;">build</i> 
+                                        <span class="widgetCancel"><i class="material-icons">cancel</i></span>
+                                    </div>
+                                </header>
+                                <div id="dialog_4563" class="editDialog" style="display:none;">
+                                    <div class="editDialog_detail">
+                                        <button onclick="editContents()">적용</button>
+                                    </div>
+                                </div>
+                                <div id='contents' style="height: 93%;" widget_type="${widget.type}">
+                                    <table class="highlight">
+                                        <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Item Name</th>
+                                            <th>Item Price</th>
+                                        </tr>
+                                        </thead>
+                                
+                                        <tbody>
+                                        <tr>
+                                            <td>Alvin</td>
+                                            <td>Eclair</td>
+                                            <td>$0.87</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Alan</td>
+                                            <td>Jellybean</td>
+                                            <td>$3.76</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jonathan</td>
+                                            <td>Lollipop</td>
+                                            <td>$7.00</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div> 
+                            </div>
+                        </div>`
             break;
         case 'text' :
             break;

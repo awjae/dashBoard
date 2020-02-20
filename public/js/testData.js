@@ -20,7 +20,7 @@ var testData = {
         {
             widgetSeq : 2,
             widgetName : '예시2',
-            type : 'default',
+            type : 'list',
             coord : {
                 x:6,
                 y:6,

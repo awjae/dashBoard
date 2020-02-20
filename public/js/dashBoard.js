@@ -48,7 +48,6 @@ function redraw (grid) {
         
         //addWidget = //(x, y, w, h, boolean, minW. maxW, minH, MaxW)
         grid.addWidget(widgetEl, widget.coord.x, widget.coord.y, widget.coord.w, widget.coord.h);
-        console.log(widget)
         switch (widget.type) {
             case 'map' :
                 var targetElId= 'ol-'+testData.dashBoardSeq+'_'+widget.widgetSeq;

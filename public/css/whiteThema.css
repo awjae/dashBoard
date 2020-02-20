@@ -25,6 +25,7 @@ html[thema='white'] {
     margin-top: 10px;
     background-color: #F4F6F9; /* Switch */
     padding: 15px;
+    color: #313A46;
     /*background: radial-gradient( at 60% 15%,#1E3A79,#142440,#142440);*/
 }
 .side-menu[thema='white'] {
