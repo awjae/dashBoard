@@ -34,7 +34,7 @@ var testData = {
         {
             widgetSeq : 3,
             widgetName : '예시3',
-            type : 'default',
+            type : 'map',
             coord : {
                 x:0,
                 y:6,

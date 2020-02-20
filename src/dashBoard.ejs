@@ -16,10 +16,9 @@
     <!-- Compiled and minified JavaScript -->
     <script src="materialize/materialize.js"></script>
     <title>Document</title>
-    
     <link rel="stylesheet" href="css/blackThema.css"/>
     <link rel="stylesheet" href="css/whiteThema.css"/>
-    
+    <link rel="stylesheet" href="ol/ol.css"/>
 </head>
 <body>
     <div class="dashboard-sidebar">
@@ -81,6 +80,7 @@
         </div>
     </div>
     <script src="js/widgetTemplete.js"></script>
+    <script src="ol/ol.js"></script>
     <script src="js/testData.js"></script>
     <script>
         var grid;
@@ -105,6 +105,31 @@
             $('.widgetCancel').on('click', function (e) {
                 $(e.target).parents('.grid-stack-item')[0].remove();
             })
+
+            //리사이즈
+            $(document).on('resizestop', '.grid-stack-item', function(e) {
+
+                var contentsType = $(e.target).children(0).children('#contents').attr('widget_type');
+                
+                switch (contentsType) {
+                    case 'map' :
+                        var map = $(e.target).children(0).children('#contents').children(0).data('map');
+                        map.updateSize();
+                        break;
+                    case 'chart' :
+                        break;
+                    case 'stat' :
+                        break;
+                    case 'list' :
+                        break;
+                    case 'text' :
+                        break;
+                    default :
+                        
+                        break;
+                }
+
+            });
         });
 
         

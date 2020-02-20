@@ -13,7 +13,7 @@ var util = require('./util'); // util.js안의 정보를 요청함
 //     debug: false
 // });
 
-pg
+//pg
 const pg = new Client({
     user : 'postgres',
     host : '121.160.17.75',
@@ -57,7 +57,7 @@ pg.connect();
     
 // };
 
-pg
+//pg
 database.PgQuery = function(res, sql, dbParams, callback) {
 
     pg.query(sql, dbParams, (err, res) => {

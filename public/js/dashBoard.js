@@ -44,9 +44,40 @@ function redraw (grid) {
     //현재 대시보드 검증 후, widget 그려야한다.
     for (widgetKey in testData.widgetList) {
         var widget = testData.widgetList[widgetKey];
-        var widgetEl = getTamplete(widget);
+        var widgetEl = getTamplete(testData.dashBoardSeq, widget);
         
         //addWidget = //(x, y, w, h, boolean, minW. maxW, minH, MaxW)
         grid.addWidget(widgetEl, widget.coord.x, widget.coord.y, widget.coord.w, widget.coord.h);
+        console.log(widget)
+        switch (widget.type) {
+            case 'map' :
+                var targetElId= 'ol-'+testData.dashBoardSeq+'_'+widget.widgetSeq;
+                console.log(targetElId)
+                var map = new ol.Map({
+                    layers: [
+                        new ol.layer.Tile({
+                        source: new ol.source.OSM()
+                        })
+                    ],
+                    target: targetElId,
+                    view: new ol.View({
+                        center: [14125911.571042122, 4506383.221066708],
+                        zoom: 14
+                    })
+                });
+                $('#'+targetElId).data('map', map);
+                break;
+            case 'chart' :
+                break;
+            case 'stat' :
+                break;
+            case 'list' :
+                break;
+            case 'text' :
+                break;
+            default :
+                
+                break;
+        }
     }
 }
