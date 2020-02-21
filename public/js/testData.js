@@ -8,8 +8,8 @@ var testData = {
             widgetName : '예시1',
             type : 'stat',
             coord : {
-                x:0,
-                y:0,
+                x:6,
+                y:5,
                 w:2,
                 h:3
             },
@@ -22,10 +22,10 @@ var testData = {
             widgetName : '예시2',
             type : 'list',
             coord : {
-                x:6,
-                y:6,
+                x:0,
+                y:4,
                 w:6,
-                h:10
+                h:4
             },
             properties : {
 
@@ -37,9 +37,9 @@ var testData = {
             type : 'map',
             coord : {
                 x:0,
-                y:6,
-                w:6,
-                h:4,
+                y:0,
+                w:4,
+                h:6,
             },
             properties : {
 
@@ -49,7 +49,7 @@ var testData = {
             widgetName : '예시4',
             type : 'chart',
             coord : {
-                x:4,
+                x:6,
                 y:0,
                 w:5,
                 h:5,
