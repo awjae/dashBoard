@@ -91,4 +91,9 @@ function redraw (grid) {
                 break;
         }
     }
+
+    //위젯 삭제
+    $('.widgetCancel').on('click', function (e) {
+        $(e.target).parents('.grid-stack-item')[0].remove();
+    })
 }
