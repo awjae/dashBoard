@@ -33,3 +33,7 @@
 .widgetCancel {
   display: contents;
 }
+
+.dashboard-header-title {
+  color: #a6a6b5; width:200px; text-align: center; font-size: 1.8em;
+}

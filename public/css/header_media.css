@@ -1,0 +1,10 @@
+@media only screen and (max-width:460px){
+
+    .dashboard-header > span {
+        font-size: 1em;
+    } 
+
+    .dashboard-header > a {
+        display: none;
+    } 
+}

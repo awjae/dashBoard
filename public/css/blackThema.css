@@ -140,3 +140,6 @@ html {
     background-color: #4e30b0;
 }
 
+#contents[widget_type="chart"] {
+    color: #a6a6b5;
+}

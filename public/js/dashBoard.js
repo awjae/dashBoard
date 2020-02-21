@@ -40,18 +40,17 @@ $('#themeSwitch').change(function (e) {
 
 
 function redraw (grid) {
-
+    grid.removeAll();
     //현재 대시보드 검증 후, widget 그려야한다.
     for (widgetKey in testData.widgetList) {
         var widget = testData.widgetList[widgetKey];
         var widgetEl = getTamplete(testData.dashBoardSeq, widget);
         
         //addWidget = //(x, y, w, h, boolean, minW. maxW, minH, MaxW)
-        grid.addWidget(widgetEl, widget.coord.x, widget.coord.y, widget.coord.w, widget.coord.h);
+        grid.addWidget(widgetEl, widget.coord.x, widget.coord.y, widget.coord.w, widget.coord.h, false);
         switch (widget.type) {
             case 'map' :
                 var targetElId= 'ol-'+testData.dashBoardSeq+'_'+widget.widgetSeq;
-                console.log(targetElId)
                 var map = new ol.Map({
                     layers: [
                         new ol.layer.Tile({
@@ -67,6 +66,19 @@ function redraw (grid) {
                 $('#'+targetElId).data('map', map);
                 break;
             case 'chart' :
+                var targetElId= 'chart-'+testData.dashBoardSeq+'_'+widget.widgetSeq;
+                var chart = bb.generate({
+                    data: {
+                      columns: [
+                      ["data1", 30, 200, 100, 400, 150, 250],
+                      ["data2", 130, 100, 140, 200, 150, 50]
+                      ],
+                      type: "spline"
+                    },
+                    bindto: "#"+targetElId
+                  });
+                  $('#'+targetElId).data('chart', chart);
+                  chart.resize({});
                 break;
             case 'stat' :
                 break;

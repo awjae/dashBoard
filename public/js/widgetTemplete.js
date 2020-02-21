@@ -82,7 +82,7 @@ var getTamplete = function (dashBoardSeq, widget) {
                                     </div>
                                 </div>
                                 <div id='contents' style="height: 93%;" widget_type="${widget.type}">
-                                    <div id="ol-${dashBoardSeq}_${widget.widgetSeq}">
+                                    <div id="ol-${dashBoardSeq}_${widget.widgetSeq}" style="height:100%">
                                         <div id="olSub-${dashBoardSeq}_${widget.widgetSeq}">
                                         </div>
                                     </div>
@@ -91,6 +91,25 @@ var getTamplete = function (dashBoardSeq, widget) {
                         </div>`
             break;
         case 'chart' :
+            templete = `<div id="widget-${dashBoardSeq}_${widget.widgetSeq}" style="overflow:hidden;" class="grid-stack-item"  data-gs-width="5" data-gs-height="5" data-gs-x="6" data-gs-y="3" data-gs-min-width="3" data-gs-min-height="3">
+                            <div class="item-content grid-stack-item-content" style="overflow-y: hidden;">
+                                <header class="item-contents-header">${widget.widgetName}
+                                    <div class="item-contents-edit">
+                                        <i class="material-icons" style="font-size: 1.2em; position: relative;">build</i> 
+                                        <span class="widgetCancel"><i class="material-icons">cancel</i></span>
+                                    </div>
+                                </header>
+                                <div id="dialog_4563" class="editDialog" style="display:none;">
+                                    <div class="editDialog_detail">
+                                        <button onclick="editContents()">적용</button>
+                                    </div>
+                                </div>
+                                <div id='contents' style="height: 93%; padding: 10px 20px 0px 0px;" widget_type="${widget.type}">
+                                    <div id="chart-${dashBoardSeq}_${widget.widgetSeq}">
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>`
             break;
         case 'stat' :
             templete = `<div id="widget-${dashBoardSeq}_${widget.widgetSeq}" style="overflow:hidden;" class="grid-stack-item"  data-gs-width="5" data-gs-height="5" data-gs-x="6" data-gs-y="3" data-gs-min-width="3" data-gs-min-height="3">
@@ -106,8 +125,10 @@ var getTamplete = function (dashBoardSeq, widget) {
                                         <button onclick="editContents()">적용</button>
                                     </div>
                                 </div>
-                                <div id='contents' style="height: 93%;" widget_type="${widget.type}">
-                                    
+                                <div id='contents' style="height: 93%; padding: 0px 20px 0px 20px;" widget_type="${widget.type}">
+                                   <p>Hello</p>
+                                   <hr style="border: 0.3px solid rgb(166, 166, 181, 0.4)">
+                                   <h3>It's Me</h3> 
                                 </div> 
                             </div>
                         </div>`
