@@ -33,7 +33,7 @@ var router = express.Router();
 app.use('/', router);
 
 //var port = 3002;
-var port = process.env.PORT || 80;
+var port = process.env.PORT || 80; //헤로쿠에 올리기 위한 포트 설정
 
 server.start = function() {
     http.createServer(app).listen(port, function() {
