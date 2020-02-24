@@ -237,3 +237,60 @@ function widgetAdd(grid, widget) {
             break;
     }
 }
+
+//modal 창 활성화 
+function overlay() {
+    el = $('#addDashboard_modal');
+    if(el.hasClass('active')) {
+        el.removeClass('active')
+    } else {
+        el.addClass('active')
+    }
+    //el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+    
+}
+
+//dashboard클릭 이벤트
+$('.add-trigger').click(function (e) {
+    e.preventDefault();
+    // document.getElementById('body-shade').style.display= 'block'
+    overlay()
+})
+
+//모달 활성화중 영역밖 클릭시 종료
+$('#addDashboard_modal').click(function (e) {
+    e.preventDefault();
+    if($(e.target)[0].id === "addDashboard_modal") {
+        //console.log('영역밖입니다.')    
+        overlay()
+    }
+})
+
+//새 대시보드 생성
+function fnNewDashboard() {
+    overlay()
+    var title = document.getElementById('newDashboardInput').value
+
+    //새 보드 생성... DB 및 화면에 추가
+    //1. 화면단 보드생성
+    var newBoardNode = document.createElement('p')
+    var a = document.createElement('i')
+    var at = document.createTextNode("grid_on")
+    a.appendChild(at);
+    a.className = 'material-icons';
+    newBoardNode.appendChild(a);
+    var b1 = document.createElement('span');
+    var b2 = document.createTextNode(`${title}`);
+    b1.className = "dashboard-sidebar-body-content"
+    newBoardNode.appendChild(b1);
+    newBoardNode.appendChild(b2);
+    $('.dashboard-sidebar-body').append(newBoardNode);
+    //2. TODO. DB 보드생성
+
+
+    $('.dashboard-sidebar-body p').click(function(e) {
+            
+    })
+
+    document.getElementById('newDashboardInput').value = ""
+}
