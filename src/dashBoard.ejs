@@ -21,6 +21,42 @@
     <link rel="stylesheet" href="ol/ol.css"/>
     <link rel="stylesheet" href="css/header_media.css"/>
     <link rel="stylesheet" href="billboard/billboard.css"/>
+    <style>
+         #addDashboard_modal {
+            visibility: hidden;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width:100%;
+            height:100%;
+            text-align:center;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity:0;
+            background: rgba(0, 0, 0, 0.5);
+            transition: 0.7s;
+        }
+
+        #addDashboard_modal[class='active'] {
+            visibility: visible;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            opacity:1;
+            width:100%;
+            height:100%;
+            text-align:center;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            transition: 0.7s;
+        }
+
+    </style>
 </head>
 <body>
     <div class="dashboard-sidebar">
@@ -43,20 +79,26 @@
                         </label>
                     </span>
                     <span style="font-size: 0.8em; margin-left:120px;">
-                        <a href="#"><i class="material-icons">add</i></a>
+                        <a class="sidebar-btn add-trigger" href="#"><i class="material-icons">add</i></a>
                     </span>
                 </p>
             </div>
         </div>
     </div> 
-    <!-- <div id="body-shade">asd</div>
-    <nav class="side-menu" role="navigation">            
+    <div id="body-shade" style="z-index: 1000;"></div>
+    <!--<nav class="side-menu" role="navigation">            
         <ul>
             <li><a href="#">Item 1</a></li>
             <li><a href="#">Item 2</a></li>
             <li><a href="#">Item 3</a></li>
         </ul>
     </nav> -->
+    <div id="addDashboard_modal">
+        <div class="dashboard_modal" style="width: 300px; height: 200px; background: #f3f3f3; border-radius: 10px;">
+            <p>Content you want the user to see goes here.</p>
+        </div>
+    </div>
+
     <div style="margin-left:100px;">
         <div class="dashboard-header">
             <span class="dashboard-header-title">Dashboard</span>
@@ -89,11 +131,9 @@
     <script>
         var grid;
         $(document).ready(function() {
-            //ready시 화면 크기를 클라이언트크기에 맞춤(dashboard-sidebar-header의 속성이 fixed라서 참고 사용)
+            //ready시 화면 크기를 클라이언트크기에 맞춤, (dashboard-sidebar-header의 속성이 fixed라서 참고 사용)
             $('.dashboard-body').css('minHeight', parseInt($('.dashboard-sidebar-header').css('height')))
             
-
-
             $('.grid-stack').gridstack({
                 resizable: {
                     handles: 'se, sw'
@@ -105,57 +145,31 @@
 
             redraw(grid);
 
-            //위젯 추가
-            $('#widget-dropdown a').on('click', function (e) {
-                
-                var widget = {
-                    widgetSeq : testData.widgetCurrentSeq+1,
-                    widgetName : '예시' + (testData.widgetCurrentSeq+1),
-                    type : $(e.target).attr('widget_type'),
-                    coord : {
-                        x:0,
-                        y:0,
-                        w:3,
-                        h:5
-                    },
-                    properties : {
-
-                    }
-                }
-                testData.widgetList.push(widget);
-                testData.widgetCurrentSeq += 1;
-                redraw (grid);
-            })
-
-            //리사이즈
-            $(document).on('resizestop', '.grid-stack-item', function(e) {
-
-                var contentsType = $(e.target).children(0).children('#contents').attr('widget_type');
-                
-                switch (contentsType) {
-                    case 'map' :
-                        var map = $(e.target).children(0).children('#contents').children(0).data('map');
-                        map.updateSize();
-                        break;
-                    case 'chart' :
-                        var chart = $(e.target).children(0).children('#contents').children(0).data('chart');
-                        chart.resize({height: parseInt($(e.target).children(0).children('#contents').height()/25)*25})
-                        break;
-                    case 'stat' :
-                        break;
-                    case 'list' :
-                        break;
-                    case 'text' :
-                        break;
-                    default :
-                        
-                        break;
-                }
-
-            });
         });
 
-        
+        function overlay() {
+            el = $('#addDashboard_modal');
+            if(el.hasClass('active')) {
+                el.removeClass('active')
+            } else {
+                el.addClass('active')
+            }
+            //el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+            
+        }
+
+        $('.add-trigger').click(function () {
+            // document.getElementById('body-shade').style.display= 'block'
+            overlay()
+        })
+
+        $('#addDashboard_modal').click(function (e) {
+            e.preventDefault();
+            if(!$(e.target).hasClass("dashboard_modal")) {
+                //console.log('영역밖입니다.')    
+                overlay()
+            }
+        })
     </script>
     <script src="js/dashBoard.js"></script>
     

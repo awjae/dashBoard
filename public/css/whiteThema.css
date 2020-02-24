@@ -95,10 +95,11 @@ html[thema='white'] {
     color : #dcdefc;
     border-radius : 15px;
     background: linear-gradient(to bottom, #313A46, #313A46, #42477d);
-    z-index: 999;
+    z-index: 2;
     padding-left: 23px;
     transition: ease 0.2s all;
     overflow: hidden;
+    box-shadow: 2px 2px 2px 2px #ced0d3;
 }
 .dashboard-sidebar-header[thema='white']:hover {
     width: 300%;

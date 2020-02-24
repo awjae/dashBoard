@@ -6,6 +6,7 @@ var testData = {
         {
             widgetSeq : 1,
             widgetName : '예시1',
+            widgetId: 'widget-1_1',
             type : 'stat',
             coord : {
                 x:6,
@@ -20,6 +21,7 @@ var testData = {
         {
             widgetSeq : 2,
             widgetName : '예시2',
+            widgetId: 'widget-1_2',
             type : 'list',
             coord : {
                 x:0,
@@ -34,6 +36,7 @@ var testData = {
         {
             widgetSeq : 3,
             widgetName : '예시3',
+            widgetId: 'widget-1_3',
             type : 'map',
             coord : {
                 x:0,
@@ -47,6 +50,7 @@ var testData = {
         },{
             widgetSeq : 4,
             widgetName : '예시4',
+            widgetId: 'widget-1_4',
             type : 'chart',
             coord : {
                 x:6,
