@@ -35,7 +35,7 @@ html[thema='white'] {
 .item-content[thema='white'] {
     background-color: #FFFFFF;
     margin: 5px;
-    border-radius: 3%;
+    /* border-radius: 3%; */
     height: 100%;
 }
 .item-contents-header[thema='white'] {
@@ -47,7 +47,7 @@ html[thema='white'] {
     display: flex;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 .item-contents-edit[thema='white'] {
     display: flex;
