@@ -75,7 +75,6 @@ $('#themeSwitch').change(function (e) {
         $('.dashboard-sidebar-footer').attr('thema','white')
     }
 })
-
 //위젯 추가
 $('#widget-dropdown a').on('click', function (e) {
     
@@ -98,6 +97,21 @@ $('#widget-dropdown a').on('click', function (e) {
     testData.widgetCurrentSeq += 1;
     widgetAdd(grid, widget);
     //redraw (grid);
+    //위젯 삭제
+    $('.widgetCancel').on('click', function (e) {
+        $(e.target).parents('.grid-stack-item')[0].remove();
+    })
+    
+    //위젯 설정
+    $('.widgetEdit').on('click', function (e) {
+
+        var targetDialog = $($(e.target).parents('.grid-stack-item')[0]).children(0).children('.editDialog');
+        if (targetDialog.css('visibility') === "hidden") {
+            $($(e.target).parents('.grid-stack-item')[0]).children(0).children('.editDialog').addClass('active')
+        } else if (targetDialog.css('visibility') === "visible") {
+            $($(e.target).parents('.grid-stack-item')[0]).children(0).children('.editDialog').removeClass('active')
+        }
+    })
 })
 
 
@@ -189,6 +203,16 @@ function redraw (grid) {
     $('.widgetCancel').on('click', function (e) {
         $(e.target).parents('.grid-stack-item')[0].remove();
     })
+
+    //위젯 설정
+    $('.widgetEdit').on('click', function (e) {
+        var targetDialog = $($(e.target).parents('.grid-stack-item')[0]).children(0).children('.editDialog');
+        if (targetDialog.css('visibility') === "hidden") {
+            $($(e.target).parents('.grid-stack-item')[0]).children(0).children('.editDialog').addClass('active')
+        } else if (targetDialog.css('visibility') === "visible") {
+            $($(e.target).parents('.grid-stack-item')[0]).children(0).children('.editDialog').removeClass('active')
+        }
+    })
 }
 
 function widgetAdd(grid, widget) {
@@ -205,8 +229,8 @@ function widgetAdd(grid, widget) {
                 ],
                 target: targetElId,
                 view: new ol.View({
-                    center: [14125911.571042122, 4506383.221066708],
-                    zoom: 14
+                    center: [14166198.662262678, 4496255.3148189215],
+                    zoom: 2
                 })
             });
             $('#'+targetElId).data('map', map);

@@ -72,12 +72,13 @@ var getTamplete = function (dashBoardSeq, widget) {
                             <div class="item-content grid-stack-item-content" style="overflow-y: hidden;">
                                 <header class="item-contents-header">${widget.widgetName}
                                     <div class="item-contents-edit">
-                                        <i class="material-icons" style="font-size: 1.2em; position: relative;">build</i> 
+                                        <span class="widgetEdit"><i class="material-icons" style="font-size: 1.2em; position: relative;">build</i></span> 
                                         <span class="widgetCancel"><i class="material-icons">cancel</i></span>
                                     </div>
                                 </header>
-                                <div id="dialog_4563" class="editDialog" style="display:none;">
+                                <div id="dialog-${dashBoardSeq}_${widget.widgetSeq}" class="editDialog">
                                     <div class="editDialog_detail">
+                                        
                                         <button onclick="editContents()">적용</button>
                                     </div>
                                 </div>
@@ -95,11 +96,11 @@ var getTamplete = function (dashBoardSeq, widget) {
                             <div class="item-content grid-stack-item-content" style="overflow-y: hidden;">
                                 <header class="item-contents-header">${widget.widgetName}
                                     <div class="item-contents-edit">
-                                        <i class="material-icons" style="font-size: 1.2em; position: relative;">build</i> 
+                                        <span class="widgetEdit"><i class="material-icons" style="font-size: 1.2em; position: relative;">build</i></span> 
                                         <span class="widgetCancel"><i class="material-icons">cancel</i></span>
                                     </div>
                                 </header>
-                                <div id="dialog_4563" class="editDialog" style="display:none;">
+                                <div id="dialog-${dashBoardSeq}_${widget.widgetSeq}" class="editDialog">
                                     <div class="editDialog_detail">
                                         <button onclick="editContents()">적용</button>
                                     </div>
@@ -116,11 +117,11 @@ var getTamplete = function (dashBoardSeq, widget) {
                             <div class="item-content grid-stack-item-content" style="overflow-y: hidden;">
                                 <header class="item-contents-header">${widget.widgetName}
                                     <div class="item-contents-edit">
-                                        <i class="material-icons" style="font-size: 1.2em; position: relative;">build</i> 
+                                        <span class="widgetEdit"><i class="material-icons" style="font-size: 1.2em; position: relative;">build</i></span> 
                                         <span class="widgetCancel"><i class="material-icons">cancel</i></span>
                                     </div>
                                 </header>
-                                <div id="dialog_4563" class="editDialog" style="display:none;">
+                                <div id="dialog-${dashBoardSeq}_${widget.widgetSeq}" class="editDialog">
                                     <div class="editDialog_detail">
                                         <button onclick="editContents()">적용</button>
                                     </div>
@@ -138,11 +139,11 @@ var getTamplete = function (dashBoardSeq, widget) {
                             <div class="item-content grid-stack-item-content" style="overflow-y: hidden;">
                                 <header class="item-contents-header">${widget.widgetName}
                                     <div class="item-contents-edit">
-                                        <i class="material-icons" style="font-size: 1.2em; position: relative;">build</i> 
+                                        <span class="widgetEdit"><i class="material-icons" style="font-size: 1.2em; position: relative;">build</i></span> 
                                         <span class="widgetCancel"><i class="material-icons">cancel</i></span>
                                     </div>
                                 </header>
-                                <div id="dialog_4563" class="editDialog" style="display:none;">
+                                <div id="dialog-${dashBoardSeq}_${widget.widgetSeq}" class="editDialog">
                                     <div class="editDialog_detail">
                                         <button onclick="editContents()">적용</button>
                                     </div>
@@ -186,11 +187,11 @@ var getTamplete = function (dashBoardSeq, widget) {
                             <div class="item-content grid-stack-item-content" style="overflow-y: hidden;">
                                 <header class="item-contents-header">${widget.widgetName}
                                     <div class="item-contents-edit">
-                                        <i class="material-icons" style="font-size: 1.2em; position: relative;">build</i> 
+                                        <span class="widgetEdit"><i class="material-icons" style="font-size: 1.2em; position: relative;">build</i></span> 
                                         <span class="widgetCancel"><i class="material-icons">cancel</i></span>
                                     </div>
                                 </header>
-                                <div id="dialog_4563" class="editDialog" style="display:none;">
+                                <div id="dialog-${dashBoardSeq}_${widget.widgetSeq}" class="editDialog">
                                     <div class="editDialog_detail">
                                         <button onclick="editContents()">적용</button>
                                     </div>

@@ -46,8 +46,7 @@
     left: 5px;
     right: 5px;
     bottom: 0;
-    /* width: auto; */
-    width: 97%;
+    width: auto;
     border-radius: 15px;
     overflow-x: hidden;
     overflow-y: auto
