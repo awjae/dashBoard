@@ -1,3 +1,6 @@
+//대시보드 메인 js
+
+
 
 //드롭다운
 $('.dropdown-trigger').dropdown();

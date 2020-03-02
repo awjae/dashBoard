@@ -1,3 +1,5 @@
+//미사용 "20200227" 사이드바 제거
+
 function hasClass(ele, cls) {
     return !!ele.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));
 }
