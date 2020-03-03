@@ -1,5 +1,4 @@
-
-
+//위젯 HTML templete
 
 var el = `<div style="overflow:hidden;" class="grid-stack-item"  data-gs-width="5" data-gs-height="5" data-gs-x="6" data-gs-y="3" data-gs-min-width="2" data-gs-min-height="3">
         <div class="item-content grid-stack-item-content" style="overflow-y: hidden;">
