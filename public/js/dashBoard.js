@@ -1,6 +1,23 @@
 //대시보드 메인 js
 
+/*
+*     ___        ______            _     _                         _ 
+*    / \ \      / /  _ \  __ _ ___| |__ | |__   ___   __ _ _ __ __| |
+*   / _ \ \ /\ / /| | | |/ _` / __| '_ \| '_ \ / _ \ / _` | '__/ _` |
+*  / ___ \ V  V / | |_| | (_| \__ \ | | | |_) | (_) | (_| | | | (_| |
+* /_/   \_\_/\_/  |____/ \__,_|___/_| |_|_.__/ \___/ \__,_|_|  \__,_| []
+* 
+* @Author: AW
+*/
+console.log(`
+    ___        ______            _     _                         _
+   / \\ \\      / /  _ \\  __ _ ___| |__ | |__   ___   __ _ _ __ __| |
+  / _ \\ \\ /\\ / /| | | |/ _\` / __| '_ \\| '_ \\ / _ \\ / _\` | '__/ _\` |
+ / ___ \\ V  V / | |_| | (_| \\__ \\ | | | |_) | (_) | (_| | |  |(_| |
+/_/   \\_\\_/\\_/  |____/ \\__,_|___/_| |_|_.__/ \\___/ \\__,_|_|  \\__,_|
 
+`
+);
 
 //드롭다운
 $('.dropdown-trigger').dropdown();
@@ -168,7 +185,8 @@ function redraw (grid) {
                     ],
                     target: targetElId,
                     view: new ol.View({
-                        center: [14125911.571042122, 4506383.221066708],
+                        projection: 'EPSG:4326',
+                        center: [126.895362, 37.481286],
                         zoom: 14
                     })
                 });
@@ -232,7 +250,8 @@ function widgetAdd(grid, widget) {
                 ],
                 target: targetElId,
                 view: new ol.View({
-                    center: [14166198.662262678, 4496255.3148189215],
+                    projection: 'EPSG:4326',
+                    center: [126.895362, 37.481286],
                     zoom: 2
                 })
             });
@@ -321,3 +340,42 @@ function fnNewDashboard() {
 
     document.getElementById('newDashboardInput').value = ""
 }
+
+
+
+
+var WFSsource = new ol.source.Vector({
+    format : new ol.format.GeoJSON(),
+    loader: function(extent, resolution, projection) {
+        var proj = projection.getCode();
+        var url = 'http://121.160.17.75:8080/geoserver/goodprice/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=goodprice%3Atest&maxFeatures=1000&outputFormat=application/json&srcname='
+         + 'EPSG:4326';
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        var onError = function() {
+            WFSsource.removeLoadedExtent(extent);
+        }
+        xhr.onerror = onError;
+        xhr.onload = function() {
+            console.log(111);
+            if (xhr.status == 200) {
+                WFSsource.addFeatures(WFSsource.getFormat().readFeatures(xhr.responseText));
+            } else {
+                console.log(222);
+            }
+        }
+        xhr.send();
+    },
+    strategy: ol.loadingstrategy.bbox
+});
+
+
+var WFSvector = new ol.layer.Vector({
+    source : WFSsource,
+    style : new ol.style.Style({
+        stroke : new ol.style.Stroke({
+            color : 'rgba(0, 0, 255, 0.9)',
+            width : 2
+        })
+    })
+})
